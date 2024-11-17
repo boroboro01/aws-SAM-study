@@ -6,7 +6,7 @@ Resources:
   helloworldpython3:
     Type: "AWS::Serverless::Function"
     Properties:
-      Handler: app.labmda_handler
+      Handler: app.lambda_handler
       Runtime: python3.6
       CodeUri: src/
       Description: A starter AWS Lambda function.
