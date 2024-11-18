@@ -4,6 +4,11 @@ import os
 
 print('Loading function')
 
+# create the client outside of the handler
+region_name = os.environ['REGION_NAME']
+dynamo = boto3.client('dynamodb', region_name=region_name)
+table_name = os.environ['TABLE_NAME']
+
 def respond(err, res=None):
     return {
         'statusCode': '400' if err else '200',
