@@ -1,4 +1,4 @@
-AWSTemplateFormatVersion: "2010-09-09"
+AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: A starter AWS Lambda function.
 Resources:
@@ -7,7 +7,13 @@ Resources:
     Properties:
       Handler: app.lambda_handler
       Runtime: python3.13
-      CodeUri: s3://boroboro01-code-sam/ae442838c5a8859b329a7540168f0860
+      CodeUri: s3://boroboro01-code-sam/1cb2b319edac221f4a975d5c3326b5db
       Description: A starter AWS Lambda function.
       MemorySize: 128
       Timeout: 3
+      Events:
+        HelloWorldSAMAPI:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: GET
